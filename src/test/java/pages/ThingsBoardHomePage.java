@@ -1,17 +1,14 @@
 package pages;
 
-import org.openqa.selenium.support.PageFactory;
+import base.BasePage;
 
-public class ThingsBoardHomePage extends BasePage{
-
-    private SidePanelFragmentPage sidePanelFragmentPage;
+public class ThingsBoardHomePage extends BasePage {
 
     public ThingsBoardHomePage() {
-        PageFactory.initElements(driver, this);
-        sidePanelFragmentPage = new SidePanelFragmentPage(driver);
+        super();
     }
 
-    public SidePanelFragmentPage getSidePanel(){
-        return sidePanelFragmentPage;
+    public SidePanelFragmentPage getSidePanel() {
+        return new SidePanelFragmentPage();
     }
 }

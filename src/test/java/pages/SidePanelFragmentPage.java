@@ -1,14 +1,13 @@
 package pages;
 
+import base.BasePage;
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class SidePanelFragmentPage extends BasePage{
+public class SidePanelFragmentPage extends BasePage {
 
     @Getter
     @FindBy(xpath = "//img[@class='tb-logo-title']")
@@ -32,40 +31,40 @@ public class SidePanelFragmentPage extends BasePage{
     @FindBy(xpath = "//a[@href='/alarms']//parent::*//parent::li")
     private WebElement alarmsBtn;
 
-    @FindBy (xpath = "//a[@href='/dashboards']//parent::*//parent::li")
+    @FindBy(xpath = "//a[@href='/dashboards']//parent::*//parent::li")
     private WebElement dashBoardsBtn;
 
-    @FindBy (xpath = "(//span[contains(text(), 'Сутності')])[1]")
+    @FindBy(xpath = "(//span[contains(text(), 'Сутності')])[1]")
     private WebElement entitiesBtn;
 
-    @FindBy (xpath = "//a[@href='/entities/devices']//parent::*//parent::li")
+    @FindBy(xpath = "//a[@href='/entities/devices']//parent::*//parent::li")
     private WebElement entitiesDevicesBtn;
 
-    public SidePanelFragmentPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
+    public SidePanelFragmentPage() {
+        super();
     }
 
-    public boolean getThingsBoardLogo(){
+    public boolean getThingsBoardLogo() {
         return thingsBoardLogo.isDisplayed();
     }
 
-    public void clickHomePageBtn(){
+    public void clickHomePageBtn() {
         homePageBtn.click();
     }
 
-    public void clickAlarmsBtn(){
+    public void clickAlarmsBtn() {
         alarmsBtn.click();
     }
 
-    public void clickDashBoardsBtn(){
+    public void clickDashBoardsBtn() {
         dashBoardsBtn.click();
     }
 
-    public void clickEntitiesBtn(){
+    public void clickEntitiesBtn() {
         entitiesBtn.click();
     }
 
-    public void clickEntitiesDevicesBtn(){
+    public void clickEntitiesDevicesBtn() {
         entitiesDevicesBtn.click();
     }
 //    public void clickButtonByHref(String buttonHref) {

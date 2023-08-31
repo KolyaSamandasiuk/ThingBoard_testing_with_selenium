@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ThingsBoardHomePage;
@@ -7,7 +8,7 @@ import pages.ThingsBoardLoginPage;
 
 import static constants.Const.*;
 
-public class ThingsBoardLoginTest extends BaseTest{
+public class ThingsBoardLoginTest extends BaseTest {
 
     @Test
     public void checkLogin() {
@@ -23,6 +24,6 @@ public class ThingsBoardLoginTest extends BaseTest{
         Assert.assertTrue(thingsBoardHomePage.getSidePanel().getThingsBoardLogo(), "ThingsBoard logo is not displayed!!!");
         Assert.assertEquals(thingsBoardHomePage.getSidePanel().getHomePageHeader().getText(), "Домашня сторінка");
         Assert.assertEquals(thingsBoardHomePage.getSidePanel().getUserRole().getText(), "Адміністратор власника");
-        Assert.assertTrue(thingsBoardHomePage.getSidePanel().getLeftBarIcons().size() <= 26);
+        Assert.assertTrue(thingsBoardHomePage.getSidePanel().getLeftBarIcons().size() <= 26); //try use assertJ
     }
 }

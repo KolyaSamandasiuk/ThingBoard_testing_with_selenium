@@ -1,5 +1,6 @@
 package tests;
 
+import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ThingsBoardDashBoardsPage;
@@ -8,7 +9,7 @@ import pages.ThingsBoardLoginPage;
 
 import static constants.Const.*;
 
-public class DashBoardsTest extends BaseTest{
+public class DashBoardsTest extends BaseTest {
 
     @Test
     public void checkDashBoards(){
