@@ -14,7 +14,7 @@ public class BaseTest {
 
     protected static WebDriver driver;
 
-    private static final String BROWSER_NAME = "chrome";
+    private static final String BROWSER_NAME = "firefox";
 
     @BeforeMethod
     public void setUp() throws Exception {

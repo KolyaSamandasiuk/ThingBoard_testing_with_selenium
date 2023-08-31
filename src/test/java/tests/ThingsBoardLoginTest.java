@@ -20,9 +20,9 @@ public class ThingsBoardLoginTest extends BaseTest{
                 .inputPasswordForLogin(PASSWORD)
                 .clickOnSubmitBtn();
 
-        Assert.assertTrue(thingsBoardHomePage.getLogoThingsBoard(), "ThingsBoard logo is not displayed!!!");
-        Assert.assertEquals(thingsBoardHomePage.getLogoFromHeader().getText(), "Домашня сторінка");
-        Assert.assertEquals(thingsBoardHomePage.getUserRole().getText(), "Адміністратор власника");
-        Assert.assertTrue(thingsBoardHomePage.getLeftBarIcons() <= 26);
+        Assert.assertTrue(thingsBoardHomePage.getSidePanel().getThingsBoardLogo(), "ThingsBoard logo is not displayed!!!");
+        Assert.assertEquals(thingsBoardHomePage.getSidePanel().getHomePageHeader().getText(), "Домашня сторінка");
+        Assert.assertEquals(thingsBoardHomePage.getSidePanel().getUserRole().getText(), "Адміністратор власника");
+        Assert.assertTrue(thingsBoardHomePage.getSidePanel().getLeftBarIcons().size() <= 26);
     }
 }
