@@ -1,8 +1,8 @@
 package pages;
 
+import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class ThingsBoardLoginPage extends BasePage {
 
@@ -15,23 +15,23 @@ public class ThingsBoardLoginPage extends BasePage {
     @FindBy(xpath = "//div[@class='tb-action-button']//button")
     private WebElement submitBtn;
 
-    public ThingsBoardLoginPage(){
-        PageFactory.initElements(driver, this);
+    public ThingsBoardLoginPage() {
+        super();
     }
 
-    public ThingsBoardLoginPage inputEmailForLogin(String email){
+    public ThingsBoardLoginPage inputEmailForLogin(String email) {
         waitUntilElementToBeClickable(emailFieldForLogin);
         emailFieldForLogin.sendKeys(email);
         return this;
     }
 
-    public ThingsBoardLoginPage inputPasswordForLogin(String password){
+    public ThingsBoardLoginPage inputPasswordForLogin(String password) {
         waitUntilElementToBeClickable(passwordFieldForLogin);
         passwordFieldForLogin.sendKeys(password);
         return this;
     }
 
-    public ThingsBoardHomePage clickOnSubmitBtn(){
+    public ThingsBoardHomePage clickOnSubmitBtn() {
         waitUntilElementToBeClickable(submitBtn);
         submitBtn.click();
         return new ThingsBoardHomePage();

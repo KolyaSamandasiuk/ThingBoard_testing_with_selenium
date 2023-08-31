@@ -1,18 +1,21 @@
 package pages;
 
+import base.BasePage;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class ThingsBoardDashBoardsPage extends BasePage{
+import static base.DriverManager.getDriver;
+
+@Slf4j
+public class ThingsBoardDashBoardsPage extends BasePage {
 
     @FindBy(xpath = "//input[@type='checkbox']")
-    private List <WebElement> checkBoxes;
+    private List<WebElement> checkBoxes;
 
     @FindBy(xpath = "(//mat-icon[contains(text(), 'assignment_ind')]//parent::button)[1]")
     private WebElement assignmentInd;
@@ -30,8 +33,7 @@ public class ThingsBoardDashBoardsPage extends BasePage{
     private WebElement entityListField;
 
     public ThingsBoardDashBoardsPage() {
-        PageFactory.initElements(driver, this);
-        actions = new Actions(driver);
+        super();
     }
 
     public ThingsBoardDashBoardsPage clickCheckboxByIndex(int index) {
@@ -41,30 +43,30 @@ public class ThingsBoardDashBoardsPage extends BasePage{
                 checkbox.click();
             }
         } else {
-            System.out.println("Invalid checkbox index.");
+            log.error("Invalid checkbox index.");
         }
         return new ThingsBoardDashBoardsPage();
     }
 
-    public ThingsBoardDashBoardsPage clickOnAssignmentIndBtn(){
+    public ThingsBoardDashBoardsPage clickOnAssignmentIndBtn() {
         moveCursor(assignmentInd);
         assignmentInd.click();
         return new ThingsBoardDashBoardsPage();
     }
 
-    public ThingsBoardDashBoardsPage clickOnPresentationField(){
+    public ThingsBoardDashBoardsPage clickOnPresentationField() {
         moveCursor(presentatiomField);
         presentatiomField.click();
         return new ThingsBoardDashBoardsPage();
     }
 
-    public ThingsBoardDashBoardsPage clickOnCastomerA(){
+    public ThingsBoardDashBoardsPage clickOnCastomerA() {
         moveCursor(customerA);
         customerA.click();
         return new ThingsBoardDashBoardsPage();
     }
 
-    public ThingsBoardDashBoardsPage clickOnSubmitBtn(){
+    public ThingsBoardDashBoardsPage clickOnSubmitBtn() {
         waitUntilElementToBeClickable(entityListField);
         entityListField.click();
         entityListField.sendKeys(Keys.ESCAPE);
@@ -74,7 +76,6 @@ public class ThingsBoardDashBoardsPage extends BasePage{
     }
 
     public WebElement getAssignedCustomer(int numberOfField) {
-        WebElement field = driver.findElement(By.xpath("(//span[contains(text(),'Customer A')])[" + numberOfField + "]"));
-        return field;
+        return getDriver().findElement(By.xpath("(//span[contains(text(),'Customer A')])[" + numberOfField + "]"));
     }
 }
