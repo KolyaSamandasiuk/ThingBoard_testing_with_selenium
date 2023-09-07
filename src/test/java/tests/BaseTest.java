@@ -14,7 +14,7 @@ public class BaseTest {
 
     protected static WebDriver driver;
 
-    private static final String BROWSER_NAME = "firefox";
+    private static final String BROWSER_NAME = "chrome";
 
     @BeforeMethod
     public void setUp() throws Exception {
@@ -29,7 +29,7 @@ public class BaseTest {
             }
             default -> throw new Exception("You chose not valid browser!");
         }
-        driver.get("https://demo.thingsboard.io/login");
+        driver.get("https://rozetka.com.ua");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
