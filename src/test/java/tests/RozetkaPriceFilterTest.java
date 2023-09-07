@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import pages.RozetkaAppleIphonePage;
 import pages.RozetkaHomePage;
 
+import static constants.Const.MAX_PRICE;
+
 public class RozetkaPriceFilterTest extends BaseTest {
 
     @Test
@@ -16,7 +18,7 @@ public class RozetkaPriceFilterTest extends BaseTest {
                 .clickSmartphonesTVandElectronicsBtn()
                 .clickOnAppleIphoneBtn()
                 .chooseXiaomiForFilter()
-                .enterMaxPriceForFilterAndSubmit();
+                .enterMaxPriceForFilterAndSubmit(MAX_PRICE);
 
         Assert.assertTrue(rozetkaAppleIphonePage.getPriceFromCards("33 499"));
         //Assert.assertTrue(rozetkaAppleIphonePage.getPriceFromCards("35 001"));

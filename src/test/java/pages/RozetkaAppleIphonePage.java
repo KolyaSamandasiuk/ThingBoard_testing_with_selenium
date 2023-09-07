@@ -44,10 +44,11 @@ public class RozetkaAppleIphonePage extends BasePage {
         return false;
     }
 
-    public RozetkaAppleIphonePage enterMaxPriceForFilterAndSubmit() {
+    public RozetkaAppleIphonePage enterMaxPriceForFilterAndSubmit(String enterPrice) {
         waitUntilElementToBeClickable(maxPriceForFilter);
         maxPriceForFilter.clear();
-        maxPriceForFilter.sendKeys("35000");
+        waitUntilElementToBeClickable(maxPriceForFilter);
+        maxPriceForFilter.sendKeys(enterPrice);
         submitBtn.click();
         return this;
     }
